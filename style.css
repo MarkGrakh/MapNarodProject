@@ -837,3 +837,235 @@ body {
         gap: 5px;
     }
 }
+
+/* Стили для админ-панели */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.admin-stats strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-project-item {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.admin-project-item:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+}
+
+.admin-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.admin-project-header h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 0;
+    flex-grow: 1;
+}
+
+.project-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-id, .project-category, .project-status {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: var(--light-gray);
+    color: #666;
+}
+
+.project-status.completed {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--success-color);
+}
+
+.project-status.in_progress {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: var(--warning-color);
+}
+
+.project-status.delayed {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger-color);
+}
+
+.project-status.planned {
+    background-color: rgba(149, 165, 166, 0.1);
+    color: var(--gray-color);
+}
+
+.admin-project-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.admin-project-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.form-control-range {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.progress-value {
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.quick-actions-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Стили для страницы проекта */
+.project-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.progress-section-small {
+    margin-top: 10px;
+}
+
+.progress-section-small .progress-bar {
+    height: 8px;
+    margin-bottom: 5px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.no-checkpoints, .no-photos {
+    text-align: center;
+    padding: 40px;
+    background: var(--light-gray);
+    border-radius: 8px;
+    color: #666;
+}
+
+.no-checkpoints i, .no-photos i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #bdc3c7;
+}
+
+.checkpoint-completed, .checkpoint-in-progress, .checkpoint-delayed {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.checkpoint-completed {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--success-color);
+}
+
+.checkpoint-in-progress {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: var(--warning-color);
+}
+
+.checkpoint-delayed {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .admin-project-actions {
+        flex-direction: column;
+    }
+    
+    .admin-project-actions .btn {
+        width: 100%;
+    }
+}
