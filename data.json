@@ -1,0 +1,228 @@
+{
+  "municipalities": [
+    {"id": 1, "name": "г. Тамбов", "projects": 4},
+    {"id": 2, "name": "Мичуринский район", "projects": 3},
+    {"id": 3, "name": "Рассказовский район", "projects": 3}
+  ],
+  
+  "projects": [
+    {
+      "id": 1,
+      "municipality_id": 1,
+      "name": "Благоустройство набережной р. Цна",
+      "description": "Реконструкция набережной реки Цна в центре Тамбова: установка новых лавочек, освещения, детской площадки",
+      "category": "благоустройство",
+      "status": "in_progress",
+      "budget": "25.8 млн ₽",
+      "start_date": "2024-01-15",
+      "end_date": "2024-06-30",
+      "progress": 65,
+      "responsible": "Иванов А.С.",
+      "contractor": "ООО 'ТамбовСтрой'",
+      "coordinates": [52.7212, 41.4523],
+      "checkpoints": [
+        {"id": 1, "name": "Проектирование", "planned_date": "2024-02-15", "actual_date": "2024-02-10", "status": "completed"},
+        {"id": 2, "name": "Закупка материалов", "planned_date": "2024-03-15", "actual_date": "2024-03-20", "status": "completed"},
+        {"id": 3, "name": "Установка освещения", "planned_date": "2024-04-30", "actual_date": null, "status": "delayed"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1519834785169-98be25ec3f84", "date": "2024-02-10", "description": "Начало работ"},
+        {"id": 2, "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00", "date": "2024-03-20", "description": "Доставка материалов"}
+      ]
+    },
+    {
+      "id": 2,
+      "municipality_id": 1,
+      "name": "Ремонт школы №22",
+      "description": "Капитальный ремонт кровли и фасада здания школы в Центральном районе",
+      "category": "образование",
+      "status": "completed",
+      "budget": "35.3 млн ₽",
+      "start_date": "2023-09-01",
+      "end_date": "2024-01-31",
+      "progress": 100,
+      "responsible": "Петрова М.В.",
+      "contractor": "ООО 'РемСтройТамбов'",
+      "coordinates": [52.7150, 41.4580],
+      "checkpoints": [
+        {"id": 1, "name": "Подготовка проекта", "planned_date": "2023-09-15", "actual_date": "2023-09-12", "status": "completed"},
+        {"id": 2, "name": "Ремонт кровли", "planned_date": "2023-11-30", "actual_date": "2023-11-25", "status": "completed"},
+        {"id": 3, "name": "Ремонт фасада", "planned_date": "2024-01-15", "actual_date": "2024-01-10", "status": "completed"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1", "date": "2023-11-25", "description": "Готовая кровля"},
+        {"id": 2, "url": "https://images.unsplash.com/photo-1562774053-701939374585", "date": "2024-01-10", "description": "Обновленный фасад"}
+      ]
+    },
+    {
+      "id": 3,
+      "municipality_id": 1,
+      "name": "Строительство детского сада на ул. Советская",
+      "description": "Строительство нового детского сада на 150 мест",
+      "category": "образование",
+      "status": "in_progress",
+      "budget": "150.5 млн ₽",
+      "start_date": "2024-02-01",
+      "end_date": "2024-12-15",
+      "progress": 40,
+      "responsible": "Сидоров В.П.",
+      "contractor": "ООО 'СтройИнвест'",
+      "coordinates": [52.7185, 41.4478],
+      "checkpoints": [
+        {"id": 1, "name": "Закладка фундамента", "planned_date": "2024-03-15", "actual_date": "2024-03-20", "status": "completed"},
+        {"id": 2, "name": "Возведение стен", "planned_date": "2024-05-31", "actual_date": null, "status": "in_progress"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1540479859555-17af45c78602", "date": "2024-03-20", "description": "Закладка фундамента"}
+      ]
+    },
+    {
+      "id": 4,
+      "municipality_id": 1,
+      "name": "Ремонт дороги на ул. Московская",
+      "description": "Капитальный ремонт участка дороги протяженностью 2.5 км",
+      "category": "дороги",
+      "status": "delayed",
+      "budget": "85.2 млн ₽",
+      "start_date": "2024-03-01",
+      "end_date": "2024-05-31",
+      "progress": 30,
+      "responsible": "Козлов И.Н.",
+      "contractor": "ООО 'Дорстрой'",
+      "coordinates": [52.7100, 41.4620],
+      "checkpoints": [
+        {"id": 1, "name": "Демонтаж старого покрытия", "planned_date": "2024-03-31", "actual_date": "2024-04-15", "status": "completed"},
+        {"id": 2, "name": "Укладка нового покрытия", "planned_date": "2024-04-30", "actual_date": null, "status": "delayed"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957", "date": "2024-04-15", "description": "Демонтажные работы"}
+      ]
+    },
+    {
+      "id": 5,
+      "municipality_id": 2,
+      "name": "Реконструкция парка в г. Мичуринск",
+      "description": "Благоустройство центрального парка культуры и отдыха",
+      "category": "благоустройство",
+      "status": "in_progress",
+      "budget": "18.7 млн ₽",
+      "start_date": "2024-02-10",
+      "end_date": "2024-07-15",
+      "progress": 55,
+      "responsible": "Михайлова Е.В.",
+      "contractor": "ООО 'Зеленстрой'",
+      "coordinates": [52.8928, 40.4907],
+      "checkpoints": [
+        {"id": 1, "name": "Разработка проекта", "planned_date": "2024-02-28", "actual_date": "2024-02-25", "status": "completed"},
+        {"id": 2, "name": "Установка малых форм", "planned_date": "2024-04-15", "actual_date": null, "status": "in_progress"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622", "date": "2024-02-25", "description": "План парка"}
+      ]
+    },
+    {
+      "id": 6,
+      "municipality_id": 2,
+      "name": "Капитальный ремонт поликлиники №1",
+      "description": "Ремонт фасада и внутренних помещений поликлиники",
+      "category": "здравоохранение",
+      "status": "in_progress",
+      "budget": "45.9 млн ₽",
+      "start_date": "2024-01-20",
+      "end_date": "2024-08-31",
+      "progress": 35,
+      "responsible": "Федоров П.С.",
+      "contractor": "ООО 'МедСтрой'",
+      "coordinates": [52.8895, 40.4950],
+      "checkpoints": [
+        {"id": 1, "name": "Подготовка помещений", "planned_date": "2024-02-28", "actual_date": "2024-03-05", "status": "completed"},
+        {"id": 2, "name": "Ремонт фасада", "planned_date": "2024-04-30", "actual_date": null, "status": "in_progress"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1516549655669-df6654e435de", "date": "2024-03-05", "description": "Подготовка к ремонту"}
+      ]
+    },
+    {
+      "id": 7,
+      "municipality_id": 2,
+      "name": "Строительство спортивной площадки",
+      "description": "Строительство многофункциональной спортивной площадки",
+      "category": "спорт",
+      "status": "planned",
+      "budget": "12.3 млн ₽",
+      "start_date": "2024-06-01",
+      "end_date": "2024-09-30",
+      "progress": 0,
+      "responsible": "Николаев С.А.",
+      "contractor": "ООО 'СпортСтрой'",
+      "coordinates": [52.8950, 40.4880],
+      "checkpoints": [],
+      "photos": []
+    },
+    {
+      "id": 8,
+      "municipality_id": 3,
+      "name": "Ремонт Дома культуры в г. Рассказово",
+      "description": "Капитальный ремонт здания городского Дома культуры",
+      "category": "культура",
+      "status": "in_progress",
+      "budget": "28.4 млн ₽",
+      "start_date": "2024-02-15",
+      "end_date": "2024-10-31",
+      "progress": 25,
+      "responsible": "Орлова Т.М.",
+      "contractor": "ООО 'КультСтрой'",
+      "coordinates": [52.6714, 41.8823],
+      "checkpoints": [
+        {"id": 1, "name": "Разработка проекта", "planned_date": "2024-03-01", "actual_date": "2024-03-10", "status": "completed"},
+        {"id": 2, "name": "Ремонт кровли", "planned_date": "2024-05-15", "actual_date": null, "status": "in_progress"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819", "date": "2024-03-10", "description": "Проектная документация"}
+      ]
+    },
+    {
+      "id": 9,
+      "municipality_id": 3,
+      "name": "Асфальтирование ул. Ленина",
+      "description": "Капитальный ремонт дорожного покрытия",
+      "category": "дороги",
+      "status": "delayed",
+      "budget": "32.1 млн ₽",
+      "start_date": "2024-03-10",
+      "end_date": "2024-06-30",
+      "progress": 15,
+      "responsible": "Белов А.К.",
+      "contractor": "ООО 'ДорМастер'",
+      "coordinates": [52.6750, 41.8800],
+      "checkpoints": [
+        {"id": 1, "name": "Подготовка основания", "planned_date": "2024-04-01", "actual_date": null, "status": "delayed"}
+      ],
+      "photos": []
+    },
+    {
+      "id": 10,
+      "municipality_id": 3,
+      "name": "Благоустройство сквера Победы",
+      "description": "Создание мемориального сквера с аллеей славы",
+      "category": "благоустройство",
+      "status": "completed",
+      "budget": "14.8 млн ₽",
+      "start_date": "2023-08-01",
+      "end_date": "2023-12-15",
+      "progress": 100,
+      "responsible": "Семенова Л.Д.",
+      "contractor": "ООО 'ЛандшафтПроект'",
+      "coordinates": [52.6680, 41.8850],
+      "checkpoints": [
+        {"id": 1, "name": "Проектирование", "planned_date": "2023-08-15", "actual_date": "2023-08-10", "status": "completed"},
+        {"id": 2, "name": "Озеленение", "planned_date": "2023-10-31", "actual_date": "2023-10-25", "status": "completed"},
+        {"id": 3, "name": "Установка памятных знаков", "planned_date": "2023-12-10", "actual_date": "2023-12-05", "status": "completed"}
+      ],
+      "photos": [
+        {"id": 1, "url": "https://images.unsplash.com/photo-1573865526739-10659fec78a5", "date": "2023-10-25", "description": "Посадка деревьев"},
+        {"id": 2, "url": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e", "date": "2023-12-05", "description": "Готовый сквер"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали проекта - Карта народных проектов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h1>Карта народных проектов</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                    <a href="admin.html"><i class="fas fa-user-cog"></i> Админ-панель</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Детали проекта -->
+    <main class="container project-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Назад к списку проектов
+        </a>
+        
+        <div id="project-detail" class="project-detail-card">
+            <!-- Детали проекта будут загружены через JavaScript -->
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Загрузка данных проекта...
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>Цифровая платформа мониторинга народных проектов</p>
+            <p>Для связи: support@народныепроекты.рф</p>
+        </div>
+    </footer>
+
+    <script src="project.js"></script>
+</body>
+</html>

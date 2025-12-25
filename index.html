@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта народных проектов - Тамбовская область</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h1>Карта народных проектов - Тамбовская область</h1>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="active"><i class="fas fa-home"></i> Главная</a>
+                    <a href="#projects"><i class="fas fa-project-diagram"></i> Проекты</a>
+                    <a href="#map-section"><i class="fas fa-map"></i> Карта</a>
+                    <a href="admin.html"><i class="fas fa-user-cog"></i> Админ-панель</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Дашборд со статистикой -->
+        <section class="dashboard">
+            <h2><i class="fas fa-tachometer-alt"></i> Мониторинг народных проектов Тамбовской области</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number total">10</div>
+                    <div class="stat-label">Всего проектов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card">
+                        <div class="stat-number completed">2</div>
+                        <div class="stat-label">Выполнено</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number in-progress">6</div>
+                    <div class="stat-label">В работе</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number delayed">2</div>
+                    <div class="stat-label">Просрочено</div>
+                </div>
+            </div>
+            
+            <!-- Светофорная визуализация -->
+            <div class="traffic-light">
+                <div class="traffic-item">
+                    <div class="light green active"></div>
+                    <span>По графику</span>
+                </div>
+                <div class="traffic-item">
+                    <div class="light yellow active"></div>
+                    <span>Незначительное отставание</span>
+                </div>
+                <div class="traffic-item">
+                    <div class="light red active"></div>
+                    <span>Критическое отставание</span>
+                </div>
+                <div class="traffic-item">
+                    <div class="light gray active"></div>
+                    <span>На стадии подготовки</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Фильтры -->
+        <section class="filters">
+            <h3><i class="fas fa-filter"></i> Фильтры проектов</h3>
+            <div class="filter-grid">
+                <select id="municipality-filter" class="filter-select">
+                    <option value="all">Все муниципалитеты</option>
+                    <option value="1">г. Тамбов</option>
+                    <option value="2">Мичуринский район</option>
+                    <option value="3">Рассказовский район</option>
+                </select>
+                <select id="status-filter" class="filter-select">
+                    <option value="all">Все статусы</option>
+                    <option value="completed">Выполнено</option>
+                    <option value="in_progress">В работе</option>
+                    <option value="delayed">Просрочено</option>
+                    <option value="planned">Запланировано</option>
+                </select>
+                <select id="category-filter" class="filter-select">
+                    <option value="all">Все категории</option>
+                    <option value="благоустройство">Благоустройство</option>
+                    <option value="дороги">Дороги</option>
+                    <option value="образование">Образование</option>
+                    <option value="здравоохранение">Здравоохранение</option>
+                    <option value="культура">Культура</option>
+                    <option value="спорт">Спорт</option>
+                </select>
+                <button class="btn btn-primary" id="apply-filters">
+                    <i class="fas fa-check"></i> Применить
+                </button>
+                <button class="btn btn-secondary" id="reset-filters">
+                    <i class="fas fa-redo"></i> Сбросить
+                </button>
+            </div>
+        </section>
+
+        <!-- Карта проектов -->
+        <section id="map-section" class="map-section">
+            <h2><i class="fas fa-map-marked-alt"></i> Карта проектов Тамбовской области</h2>
+            <div class="map-container">
+                <div id="map" style="width: 100%; height: 500px;"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color green"></span>
+                        <span>Выполнено</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color yellow"></span>
+                        <span>В работе</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color red"></span>
+                        <span>Просрочено</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color gray"></span>
+                        <span>Запланировано</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Список проектов -->
+        <section id="projects" class="projects-section">
+            <h2><i class="fas fa-project-diagram"></i> Все проекты Тамбовской области</h2>
+            <div id="projects-container" class="projects-grid">
+                <!-- Проекты будут загружены через JavaScript -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Загрузка проектов...
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>Цифровая платформа мониторинга народных проектов Тамбовской области</p>
+            <p>Для связи: support@народныепроекты68.рф</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем Яндекс.Карты -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=7f52274f-f8e6-49e6-b306-d573986e824c" type="text/javascript"></script>
+    <script src="script.js"></script>
+</body>
+</html>
