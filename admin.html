@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Админ-панель - Карта народных проектов</title>
+    <title>Админ-панель - Карта народных проектов Тамбовской области</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +15,11 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-map-marked-alt"></i>
-                    <h1>Карта народных проектов - Админ-панель</h1>
+                    <h1>Админ-панель - Тамбовская область</h1>
                 </div>
                 <nav class="nav">
                     <a href="index.html"><i class="fas fa-home"></i> Главная</a>
-                    <a href="#projects"><i class="fas fa-project-diagram"></i> Проекты</a>
+                    <a href="index.html#projects"><i class="fas fa-project-diagram"></i> Проекты</a>
                     <a href="admin.html" class="active"><i class="fas fa-user-cog"></i> Админ-панель</a>
                 </nav>
             </div>
@@ -29,115 +29,147 @@
     <!-- Основной контент -->
     <main class="container">
         <div class="admin-section">
-            <h2><i class="fas fa-tools"></i> Управление проектами</h2>
+            <div class="admin-header">
+                <h2><i class="fas fa-tools"></i> Управление народными проектами</h2>
+                <div class="admin-stats">
+                    <span><i class="fas fa-project-diagram"></i> Всего проектов: <strong id="total-projects">0</strong></span>
+                    <span><i class="fas fa-users"></i> Муниципалитетов: <strong id="total-municipalities">0</strong></span>
+                </div>
+            </div>
             
-            <!-- Форма добавления проекта -->
+            <!-- Форма добавления/редактирования проекта -->
             <div class="form-section">
-                <h3><i class="fas fa-plus-circle"></i> Добавить новый проект</h3>
+                <h3><i class="fas fa-plus-circle"></i> <span id="form-title">Добавить новый проект</span></h3>
                 <form id="add-project-form" class="admin-form">
                     <div class="form-group">
-                        <label for="project-name"><i class="fas fa-heading"></i> Название проекта</label>
-                        <input type="text" id="project-name" class="form-control" required>
+                        <label for="project-name"><i class="fas fa-heading"></i> Название проекта *</label>
+                        <input type="text" id="project-name" class="form-control" required 
+                               placeholder="Например: Благоустройство парка Победы">
                     </div>
                     
                     <div class="form-group">
-                        <label for="project-description"><i class="fas fa-align-left"></i> Описание</label>
-                        <textarea id="project-description" class="form-control" rows="3" required></textarea>
+                        <label for="project-description"><i class="fas fa-align-left"></i> Описание проекта *</label>
+                        <textarea id="project-description" class="form-control" rows="3" required 
+                                  placeholder="Подробное описание проекта, цели и задачи"></textarea>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="project-municipality"><i class="fas fa-city"></i> Муниципалитет</label>
+                            <label for="project-municipality"><i class="fas fa-city"></i> Муниципалитет *</label>
                             <select id="project-municipality" class="form-control" required>
                                 <option value="">Выберите муниципалитет</option>
-                                <option value="1">Центральный район</option>
-                                <option value="2">Северный район</option>
-                                <option value="3">Южный район</option>
+                                <!-- Заполнится через JavaScript -->
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="project-category"><i class="fas fa-tags"></i> Категория</label>
+                            <label for="project-category"><i class="fas fa-tags"></i> Категория *</label>
                             <select id="project-category" class="form-control" required>
                                 <option value="">Выберите категорию</option>
                                 <option value="благоустройство">Благоустройство</option>
                                 <option value="дороги">Дороги</option>
                                 <option value="образование">Образование</option>
                                 <option value="здравоохранение">Здравоохранение</option>
-                                <option value="культура">Культура</option>
+                                <option value="культура">Культура и спорт</option>
+                                <option value="экология">Экология</option>
+                                <option value="инфраструктура">Инфраструктура</option>
                             </select>
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="project-status"><i class="fas fa-flag"></i> Статус</label>
+                            <label for="project-status"><i class="fas fa-flag"></i> Статус проекта *</label>
                             <select id="project-status" class="form-control" required>
                                 <option value="planned">Запланировано</option>
                                 <option value="in_progress">В работе</option>
                                 <option value="completed">Выполнено</option>
                                 <option value="delayed">Просрочено</option>
+                                <option value="on_hold">Приостановлено</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="project-progress"><i class="fas fa-chart-line"></i> Прогресс (%)</label>
-                            <input type="number" id="project-progress" class="form-control" min="0" max="100" value="0">
+                            <input type="range" id="project-progress" class="form-control-range" min="0" max="100" value="0">
+                            <div class="progress-value">
+                                <span id="progress-value">0%</span>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="project-budget"><i class="fas fa-money-bill-wave"></i> Бюджет</label>
-                            <input type="text" id="project-budget" class="form-control" placeholder="10 млн ₽" required>
+                            <label for="project-budget"><i class="fas fa-money-bill-wave"></i> Бюджет *</label>
+                            <input type="text" id="project-budget" class="form-control" required 
+                                   placeholder="Например: 15.8 млн ₽">
                         </div>
                         
                         <div class="form-group">
-                            <label for="project-responsible"><i class="fas fa-user-tie"></i> Ответственный</label>
-                            <input type="text" id="project-responsible" class="form-control" required>
+                            <label for="project-responsible"><i class="fas fa-user-tie"></i> Ответственный *</label>
+                            <input type="text" id="project-responsible" class="form-control" required 
+                                   placeholder="ФИО ответственного лица">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="project-start-date"><i class="fas fa-calendar-alt"></i> Дата начала</label>
+                            <label for="project-start-date"><i class="fas fa-calendar-alt"></i> Дата начала *</label>
                             <input type="date" id="project-start-date" class="form-control" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="project-end-date"><i class="fas fa-calendar-alt"></i> Дата окончания</label>
+                            <label for="project-end-date"><i class="fas fa-calendar-alt"></i> Дата окончания *</label>
                             <input type="date" id="project-end-date" class="form-control" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="project-contractor"><i class="fas fa-hard-hat"></i> Подрядчик</label>
-                        <input type="text" id="project-contractor" class="form-control" required>
+                        <input type="text" id="project-contractor" class="form-control" 
+                               placeholder="Название подрядной организации">
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Сохранить проект
-                    </button>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Сохранить проект
+                        </button>
+                        <!-- Кнопка отмены появится при редактировании -->
+                    </div>
                 </form>
             </div>
             
             <!-- Список существующих проектов -->
             <div class="projects-list-section">
-                <h3><i class="fas fa-list"></i> Существующие проекты</h3>
+                <div class="section-header">
+                    <h3><i class="fas fa-list"></i> Все проекты Тамбовской области</h3>
+                    <div class="section-actions">
+                        <button class="btn btn-secondary" onclick="refreshProjects()">
+                            <i class="fas fa-sync-alt"></i> Обновить
+                        </button>
+                    </div>
+                </div>
+                
                 <div id="admin-projects-list">
-                    <!-- Проекты будут загружены через JavaScript -->
                     <div class="loading">
                         <i class="fas fa-spinner fa-spin"></i> Загрузка проектов...
                     </div>
                 </div>
             </div>
             
-            <!-- Форма добавления контрольной точки -->
-            <div class="form-section">
-                <h3><i class="fas fa-tasks"></i> Управление контрольными точками</h3>
-                <div class="checkpoint-form">
-                    <p>Для добавления контрольной точки нажмите кнопку "Добавить КП" рядом с нужным проектом</p>
-                    <p>Для загрузки фотоотчета нажмите кнопку "Добавить фото"</p>
+            <!-- Быстрые действия -->
+            <div class="quick-actions-section">
+                <h3><i class="fas fa-bolt"></i> Быстрые действия</h3>
+                <div class="quick-actions-grid">
+                    <button class="btn btn-warning" onclick="exportToJSON()">
+                        <i class="fas fa-download"></i> Экспорт данных
+                    </button>
+                    <button class="btn btn-info" onclick="importFromJSON()">
+                        <i class="fas fa-upload"></i> Импорт данных
+                    </button>
+                    <button class="btn btn-success" onclick="generateReport()">
+                        <i class="fas fa-file-pdf"></i> Создать отчет
+                    </button>
                 </div>
             </div>
         </div>
@@ -146,8 +178,8 @@
     <!-- Футер -->
     <footer class="footer">
         <div class="container">
-            <p>Цифровая платформа мониторинга народных проектов</p>
-            <p>Для связи: support@народныепроекты.рф</p>
+            <p>Админ-панель платформы мониторинга народных проектов Тамбовской области</p>
+            <p>Для связи: admin@народныепроекты68.рф</p>
         </div>
     </footer>
 
